@@ -19,8 +19,8 @@ function browserSync(cb) {
             baseDir: "./"
         }
     });
-    watch('sass/*.scss', generateCSS);
-    watch("index.html").on('change', sync.reload);
+    watch('./sass/*.scss', generateCSS);
+    watch("./index.html").on('change', sync.reload);
     cb();
 }
 
