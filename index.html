@@ -4,11 +4,345 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="imagines/Logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="./css/index.css">
-    <title>Document</title>
+    <title>Takeaway & Delivery</title>
 </head>
 <body>
-    <p>fghjkl</p>
-    fghjkl
+<header>
+    <div class="menu-upp">
+<div class="upper-menu">
+   
+<div class="upper-menu-text">
+     <h3 class="h3-text">We're open and available for takeaway & delivery. <a href="#">Order Now</a></h3>
+     </div>
+</div></div>
+<div class="menu">
+    <div class="container">
+        <div class="menu-content">
+            <div class="menu-logo">
+                <img src="imagines/Logo.svg" alt="logotype">
+            </div>
+            <div class="menu-items">
+                <nav class="menu_links">
+                    <ul class="menu_item">
+                        <li class="menu_item_li menu_item_li_blue"><a class="menu-item-a" href="#">Home</a></li>
+                        <li class="menu_item_li"><a  class="menu-item-a" href="#">Order</a></li>
+                        <li class="menu_item_li"><a  class="menu-item-a" href="#">Company</a></li>
+                        <li class="menu_item_li"><a  class="menu-item-a" href="#">FAQ</a></li>
+                        <li class="menu_item_li"><a  class="menu-item-a" href="#">Contact</a></li>
+                        
+                    </ul>
+                    <div class="burger" onclick="nav()">
+                        <div class="line line1"></div>
+                        <div class="line line2"></div>
+                        <div class="line line3"></div>
+                   </div>
+                </nav>
+                <div class="menu_icon" onclick="openBasket()">
+                    <div class="menu_icon_shop">
+                        <div class="menu_icon_basket">
+                          <a href="#"><img src="imagines/Group.svg" alt="basket-icon"></a>
+                        </div></div>
+                        <div class="menu_icon_value">
+                            <div class="menu_icon_number">
+                                <p class="h3-text menu_icon_text">0</p>
+                            </div>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-basket close-basket">
+    <div class="sign_close-modal-block" onclick="closeBasket()">
+    <div class="sign_close-modal" >
+        <div class="sign_close-modal-line1 sign_close-modal-line"></div>
+        <div class="sign_close-modal-line2 sign_close-modal-line"></div> 
+    </div>
+    </div>
+    <div class="modal-basket-item-templates" hidden>
+        <div class="modal-basket-item">
+            <div class="modal-basket-item-close">
+                <div class="browseMenu-close-sign">
+                    <div class="browseMenu-close-sign-line1"></div>
+                    <div class="browseMenu-close-sign-line2"></div>
+                </div>
+            </div>
+            <div class="browseMenu-item">
+                <div class="browseMenu-icon"><img class="browseMenu-icon-img"></div>
+                <div class="browseMenu-item-describe">
+                    <h3 class="browseMenu-item_title"></h3>
+                    <p class="browserMenu-item_price"></p>
+                    
+                    <p class="browserMenu-item_p">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <input class="browserMenu-item_input" type="number" value="1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-basket-elements">
+       
+    </div>
+    <div class="estimate estimate-close">
+        <div class="estimated-total-price">
+            <h3 class="estimated-total-price-h3">Estimated Total $</h3>
+            <h3 class="estimated-all-price">0</h3>
+        </div>
+    </div>
+    <div class="addYourPhone addYourPhone-close">
+        <label for="addYourProne-input" class="addYourProne-label">Add your phone number:</label>
+        <input class="addYourProne-input"type="tel">
+    </div>
+  <div class="button-checkout button-checkout-close">
+    <button class="button-ckeckout-item">Procced to checkout</button>
+  </div>
+  <p class="p-basketModal-empty">Your basket is empty.</p>
+</div>
+
+<div class="modal-order modal-order-close">
+    <div class="modal-order-request">
+        <h3 class="modal-order-request-h3">Thank you for your order.As soon as possible We call you for clarify about your order</h3>
+    </div>
+</div>
+    </header>
+    <main>
+<div class="beauty_food">
+    <div class="container food_container">
+        <div class="food-content">
+            <div class="beauty-food_item">
+                <h1 class="beauty_food-h1">Beautiful food & takeaway,<span>delivered</span> to your door.</h1>
+                <p class="beuty_food-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</p>
+                <button class="beauty_food-button">
+                    <p class=" beauty_button-p">Place an Order</p>
+                </button>
+                <div class="beauty-food-img">
+                    <img src="imagines/IMAGE.svg" alt="Beauty-food">
+                </div>
+                <p class="beuty_food-text"><span>4.8 out of 5</span> out of 5based on 2000+ reviews</p>
+            </div>
+            <div class="beuty-food-item-img">
+                <img class="beauty_image"src="imagines/IMAGE.png" alt="fooImage">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fresh_product">
+    <div class="container fresh_container">
+        <div class="fresh-content">
+            <div class="fresh_product_items">
+                <h1 class="fresh-product-h1">The home of fresh products</h1>
+                <p class="beuty_food-p fresh-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</p>
+                   
+                <button class="beauty_food-button">
+                    <p class=" beauty_button-p">Learn about us</p>
+                </button></div>
+            <div class="fresh-food-item-img">
+                <img class="fresh_image"src="imagines/fresh.png" alt="fooImage">
+            </div>
+            </div>
+</div></div>
+<div class="howWorks">
+    <div class="container howworks_container">
+        <div class="howWorks_title">
+            <h1 class="howWorks-h1">
+                How it works.
+            </h1>
+        </div>
+        <div class="howWorks_content">
+            <div class="howWorks_item">
+                <div class="howWorks_img">
+                    <img class="howWorks-image" src="/imagines/adaptMenu.png" alt="AdaptMunu">
+            </div>
+            <div class="howWorks_describe-item">
+                <h3 class="howWorks_h3">
+                    Adapt your menu items
+                </h3>
+            <p class="howWorks_p beuty_food-p">
+                Easily adapt your menu using the webflow CMS and allow customers to browse your items.
+            </p>
+            </div>
+        </div>
+            <div class="howWorks_item">
+                <div class="howWorks_line"></div>
+            </div>
+            <div class="howWorks_item">
+                <div class="howWorks_img">
+                    <img class="howWorks-image" src="/imagines/online.png" alt="AdaptMunu">
+                </div>
+                <div class="howWorks_describe-item"> 
+                    <h3 class="howWorks_h3">
+                    Accept online orders & takeout
+                </h3>
+            <p class="howWorks_p beuty_food-p">
+                Let your customers order and pay via the powerful ecommerce system, or simple let them call your store.
+            </p></div>
+                </div>
+            <div class="howWorks_item">
+                <div class="howWorks_line"></div>
+            </div>
+            <div class="howWorks_item">
+                <div class="howWorks_img">
+                    <img class="howWorks-image"src="/imagines/manageDelivery.png" alt="AdaptMunu">
+                </div>
+                <div class="howWorks_describe-item">
+                    <h3 class="howWorks_h3">
+                        Manage delivery or takeout
+                    </h3>
+                <p class="howWorks_p beuty_food-p">
+                    Manage your own logistics and take orders simply through the ecommerce system.
+                </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="browseMenu">
+    <div class="container browseMenu_container">
+        <div class="browseMenu_title">
+            <h1 class="browseMenu-h1 howWorks-h1">Browse our menu</h1>
+            <p class="browseMenu-p">Use our menu to place an order online, or <span>phone</span> our store 
+                to place a pickup order. Fast and fresh food.</p>
+        </div>
+        <div class="browseMenu-buttons">
+            <button class="browseMenu-button_burgers button-blue buttons " onclick="openBurgers()">
+             Burgers
+            </button>
+            <button class="browseMenu-button_sides buttons" onclick="openSides()">
+                  Sides
+               </button>
+               <button class="browseMenu-button_drinks buttons" onclick="openDrinks()">
+                    Drinks
+               </button>
+        </div>
+        <div class="browseMenu_content">
+            <div class="browseMenu-item_template" hidden>
+                <div class="browseMenu-item">
+                    <div class="browseMenu-icon"><img class="browseMenu-icon-img"></div>
+                    <div class="browseMenu-item-describe">
+                        <div class="browseMenu-item_title-price">
+                            <h3 class="browseMenu-item_title"></h3>
+                            <p class="browserMenu-item_price"></p>
+                        </div>
+                        <p class="browserMenu-item_p">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <div class="browserMenu-item_AddToCard"><input class="browserMenu-item_input" type="number" value="1"><button
+                                class="browseMenu-item-button" onclick="addElementToCard(event)">Add to card</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="browseMenu-burgers"></div>
+            <div class="browseMenu_sides browseMenu_disappear"></div>
+            <div class="browseMenu-drinks browseMenu_disappear"></div>
+            </div>
+            <button class="browseMenu-button-fullMenu" onclick="openFullMenu()">See Full Menu</button>
+            <button class="browseMenu-button-CloseMenu browseMenu_disappear" onclick="closeFullMenu()">Close Full Menu</button>
+     </div>
+        </div>
+     <div class="orderOnline">
+        <div class="orderOnline-container container">
+            <div class="orderOnline_content">
+                <div class="orderOnline-item">
+                <div class="orderOnline-spots">
+                    <img src="/imagines/orderOnlineSpots.svg" alt="OrderSpots" class="orderOnline-spots-img">
+                </div>
+                <div class="orderOnline_Icon">
+                    <img src="/imagines/orderOnline.png" alt="OrderOnline-image" class="orderOnline_img">
+                </div>
+                </div>
+                <div class="orderOnline-title">
+                    <h1 class="orderOnline-title_blue">Order online with our simple checkout.</h1>
+                    <p class="beuty_food-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</p>
+                    <button class="beauty_food-button">
+                        <p class=" beauty_button-p">See our FAQ</p>
+                    </button> 
+                </div>
+            </div>
+        </div>
+     </div>
+     <div class="callStore">
+        <div class="container callStore_container">
+            <div class="callStore-content">
+                <div class="callStore_items">
+                    <h1 class="fresh-product-h1 callstore-h1">Call our store and takeaway when it suits you best.</h1>
+                    <p class="beuty_food-p callStore-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</p>
+                       
+                    <button class="beauty_food-button">
+                        <p class=" beauty_button-p">Ph. +61 233 2333</p>
+                    </button></div>
+                <div class="fresh-food-item-img">
+                    <img class="fresh_image"src="imagines/callStore.png" alt="callStore">
+                </div>
+                </div>
+    </div>
+</div>
+<div class="supportGoodFood">
+    <div class="supportGoodFood-container">
+        <div class="supportGoodFood-img">
+        </div>
+        <div class="supportGoodFood-content">
+            <div class="supportGoodFood-item">
+                <h1 class="supportGoodfood-h1"><span>Support</span> good food and local business.</h1>
+                <button class="supportGoodFood-button">Order Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
+    <footer>
+        <div class="footer_conrtainer container">
+            <div class="upper_footer">
+                <div class="upper_footer-item1">
+               <div class="upper_footer_icon">
+                <img src="/imagines/logo-footer.svg" alt="logoFooter" class="upper_footer-img">
+               </div>
+               <p class="upper_footer_p upper_footer_item-li-p">Takeaway & Delivery template for small - medium businesses.</p>
+                </div>
+                <div class="upper_footer-item2">
+                    <ul class="upper_footer_item2_list">
+                        <li class="upper_footer_item-li-title"><a href="#">company</a></li>
+                        <li class="upper_footer_item-li-p"><a href="#">Home</a></li>
+                        <li class="upper_footer_item-li-p"><a href="#">Order</a></li>
+                        <li class="upper_footer_item-li-p"><a href="#">FAQ</a></li>
+                        <li class="upper_footer_item-li-p"><a href="#">Contact</a></li>
+                    </ul>
+                    <ul class="upper_footer_item2_list">
+                        <li class="upper_footer_item-li-title"><a href="#">TEMPLATE</a></li>
+                        <li class="upper_footer_item-li-p"><a href="#">Style Guide</a></li>
+                        <li class="upper_footer_item-li-p"><a href="#">Catalog</a</li>
+                        <li class="upper_footer_item-li-p"><a href="#">Licence</a></li>
+                        <li class="upper_footer_item-li-p"><a href="#">Webflow University</a></li>
+                    </ul>
+                    <ul class="upper_footer_item2_list">
+                        <li class="upper_footer_item-li-title"><a href="#">FLOWBASE</a></li>
+                        <li class="upper_footer_item-li-p"><a href="#">More Cloneables</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lower_footer">
+              <p class="upper_footer_item-li-p lower_footer_item-p">Built by <span>Flowbase</span> · Powered by <span>Webflow</span></p>
+              <div class="lower_footer_socialMedia">
+                <div class="lower_footer-socialMedia-item">
+                   <a href="#"> <img src="/imagines/insta.svg" alt="insta" class="lower_footer-insta_img"></a>
+                </div>
+                <div class="lower_footer-socialMedia-item">
+                   <a href="#"><img src="/imagines/twitter.svg" alt="twitter" class="lower_footer-twitter_img"></a>
+                </div>
+                <div class="lower_footer-socialMedia-item">
+                   <a href="#"> <img src="/imagines/youTube.svg" alt="youTube" class="lower_footer-youtube_img"></a>
+                </div>
+              </div> 
+            </div>
+        </div>
+    </footer>
+
+<script src="index.js"></script>
 </body>
 </html>
