@@ -943,9 +943,9 @@ cursor: pointer;
 }
 .modal-basket{
   display: block;
-  position: absolute;
+  position:absolute;
   flex-direction: column;
-  width: 30%;
+  width: 40%;
   background-color:#fff;
   right: 0;
   top:30px;
@@ -959,27 +959,25 @@ cursor: pointer;
   display:none;
  }
 .sign_close-modal {
-  padding-top: 40px;
+  padding-top: 30px;
   padding-bottom: 20px;
- }
- .sign_close-modal-block{
+  padding-right: 10px;
   display: flex;
   justify-content: flex-end;
+ }
+ .sign_close-modal-block{
+  
   cursor: pointer;
   
  }
-.sign_close-modal-line1 {
-  transform: translate(-55px) rotate(45deg) translate(10px);
+ .sign-close-modal-img{
+  width: 40px;height: 40px;
+
  }
-.sign_close-modal-line {
-  height: 2px;
-  width: 35px;
-  margin: 0.5rem 0;
-  background: #28224B;
- }
-.sign_close-modal-line2 {
-  transform: translate(-55px) rotate(-45deg) translate(10px);
- }
+.browseMenu-close-sign-img{
+  width: 20px;height: 20px;
+  color: #fff;
+}
  .estimate {display: flex;
 justify-content: flex-end;
 padding-right: 20px;
@@ -1021,11 +1019,13 @@ margin-left: 20px; }
   color: #546285;
    }
 .addYourProne-input {
-margin-left: 10px;
+
 border-style: solid;
 border-width: 1px;
 border-color: #35B8BE;
 border-radius: 20px;
+height: 30px;
+width: 210px;
  }
  .button-checkout {
 display: flex; 
@@ -1103,25 +1103,15 @@ padding-top: 20px;}
   display: none;
  }
  .browseMenu-close-sign {
-  height: 25px;
-  width: 25px;
-border-radius: 100px;
+  display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+width: 30px;
+height: 30px;
 background-color: #35B8BE;
-cursor: pointer;} 
-.browseMenu-close-sign-line1 {
-  background-color: #fff;
-  height: 2px;
-  width: 20px;
-  margin: 0.5rem 0;
-  transform: translate(-5px) rotate(40deg) translate(8px);
-}
-.browseMenu-close-sign-line2 {
-  background-color: #fff;
-  height: 2px;
-  width: 20px;
-  margin: 0.5rem 0;
-  transform: translate(-5px) rotate(-45deg) translate(8px);
- }
+border-radius: 100px;} 
+
  @media screen and (max-width:950px){
   .modal-basket{width: 50%;}
  }

@@ -27,7 +27,23 @@ const estimate=document.querySelector('.estimate');
 const addYourPhone=document.querySelector('.addYourPhone');
 const button_checkout=document.querySelector('.button-checkout');
 const p_basketModal_empty=document.querySelector('.p-basketModal-empty');
+const modalOrder=document.querySelector('.modal-order');
+const estimated_all_price=document.querySelector('.estimated-all-price');
 
+let arr=[];
+function calculateEstimate(){
+arr.splice(0,arr.length);
+   for(let elem of basketProduct){
+      let elemQuantity=Number(elem.quantity);
+      elem.allPrice=(elemQuantity*elem.price);
+     arr.push(elem.allPrice);
+   
+     let summArr=arr.reduce((elem,previous)=>previous+elem,0);
+   
+   let summArrNew=summArr.toFixed(2);
+   estimated_all_price.innerText=summArrNew;
+      }
+   }
 function nav(){
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.menu_links');
@@ -42,6 +58,7 @@ function nav(){
       let modalBasketItemTemplates=document.querySelector('.modal-basket-item-templates');
      let modalBasketItem= modalBasketItemTemplates.querySelector('.modal-basket-item');
       let modalBasketItemClone=modalBasketItem.cloneNode(true);
+      modalBasketItemClone.classList.add('modal-basket-item_forDelete');
       let browseMenuIconImg=modalBasketItemClone.querySelector('.browseMenu-icon-img');
       browseMenuIconImg.setAttribute('src',src);
       let browseMenuItemTitle=modalBasketItemClone.querySelector('.browseMenu-item_title');
@@ -56,41 +73,82 @@ function nav(){
     let sign_close_modal_block=document.querySelector('.sign_close-modal-block');
     function addElementToCard(event){
       let target=event.target;
-      let target_browseMenu=target.closest('.browseMenu-item');
-      let target_browseMenu_title=target_browseMenu.querySelector('.browseMenu-item_title');
+       let target_browseMenu=target.closest('.browseMenu-item');
+       let target_browseMenu_title=target_browseMenu.querySelector('.browseMenu-item_title');
+       let allProductsInBusketDelete=modal_basket.querySelectorAll('.modal-basket-item_forDelete');
+     for(let elem of allProductsInBusketDelete){
+      elem.remove()
+     }; 
+
       let target_browseMenu_quantity=target_browseMenu.querySelector('.browserMenu-item_input').value;
-      console.log(target_browseMenu);
-      let modal_basket_MenuItem_title=modal_basket.querySelectorAll('.browseMenu-item_title');
-     
-      for(let elem of modal_basket_MenuItem_title){
-     
-         if(elem.innerText===target_browseMenu_title.innerText){
-           let menuItemForDelete= elem.closest('.modal-basket-item');
-           console.log(menuItemForDelete);
-           menuItemForDelete.remove();
+      if(basketProduct.length===0){
+         for(let item of allProducts){
+            if(item.titleofProduct===target_browseMenu_title.innerText){
+               item.quantity=target_browseMenu_quantity;
+               basketProduct.push(item);
+               count+=1;
+            menu_icon_text.innerText=count;
+        }}
+         for(let i of basketProduct){
+            let newElemforBasket=createElemForCard(i.titleofProduct,i.src,i.price,i.quantity);
+            sign_close_modal_block.insertAdjacentElement('afterend',newElemforBasket);
          }
-      }
+         estimate.classList.remove('estimate-close');
+         addYourPhone.classList.remove('addYourPhone-close');
+         button_checkout.classList.remove('addYourPhone-close');
+         p_basketModal_empty.classList.add('p-basketModal-empty-close');
+         button_checkout.classList.remove('button-checkout-close');
+        
+      }else{
       for(let elem of basketProduct){
          if(elem.titleofProduct===target_browseMenu_title.innerText){
-          let targetElemIndex=basketProduct.findIndex(item=>{item===elem});
-          basketProduct.splice(targetElemIndex,1)
-      }}
-     
-      
+          let targetElemIndex=basketProduct.findIndex((item=>item===elem));
+          basketProduct.splice(targetElemIndex,1);
+          console.log(targetElemIndex);
+          count-=1;
+          menu_icon_text.innerText=count;}}
      
       for(let item of allProducts){
          if(item.titleofProduct===target_browseMenu_title.innerText){
             item.quantity=target_browseMenu_quantity;
-            basketProduct.push(item)
+            basketProduct.push(item);
+            count+=1;
+         menu_icon_text.innerText=count;
          }
+         
       }
       for(let i of basketProduct){
          let newElemforBasket=createElemForCard(i.titleofProduct,i.src,i.price,i.quantity);
          sign_close_modal_block.insertAdjacentElement('afterend',newElemforBasket);
       }
-    
-    }
-    console.log(basketProduct);
+      estimate.classList.remove('estimate-close');
+      addYourPhone.classList.remove('addYourPhone-close');
+      button_checkout.classList.remove('addYourPhone-close');
+      p_basketModal_empty.classList.add('p-basketModal-empty-close');
+      button_checkout.classList.remove('button-checkout-close');
+     
+   }calculateEstimate()}
+   
+   function sendOrder(){
+      modal_basket.classList.add('close-basket'); 
+      setTimeout(function(){modalOrder.classList.remove('modal-order-close')},3000);
+      setTimeout(function(){modalOrder.classList.add('modal-order-close')},6000);
+      let allProductsInBusketDelete=modal_basket.querySelectorAll('.modal-basket-item_forDelete');
+      for(let elem of allProductsInBusketDelete){
+         elem.remove()
+      }
+    basketProduct.splice(0,basketProduct.length);
+      estimate.classList.add('estimate-close');
+      addYourPhone.classList.add('addYourPhone-close');
+      button_checkout.classList.add('addYourPhone-close');
+      p_basketModal_empty.classList.remove('p-basketModal-empty-close');
+      button_checkout.classList.add('button-checkout-close');
+      count=0;
+      menu_icon_text.innerText=count;
+     
+      calculateEstimate();
+   }
+   
     let browseMenu_item_template=document.querySelector('.browseMenu-item_template');
     function createNewElem(title,price,srcofProduct){
       let templateElem=browseMenu_item_template.cloneNode(true);
@@ -166,4 +224,38 @@ function openBasket(){
 }
 function closeBasket(){
    modal_basket.classList.add('close-basket');
+}
+function deleteElemInBasket(event){
+   let target=event.target;
+   let modalBasketItem_delete=target.closest('.modal-basket-item');
+   let titleTarget=modalBasketItem_delete.querySelector('.browseMenu-item_title');
+   modalBasketItem_delete.remove();
+   for(let elem of basketProduct){
+      if(elem.titleofProduct===titleTarget.innerText){
+       let targetElemIndex=basketProduct.findIndex((item=>item===elem));
+       basketProduct.splice(targetElemIndex,1);
+       count-=1;
+       menu_icon_text.innerText=count;}}
+      
+       calculateEstimate();
+       
+       if(basketProduct.length===0){
+         estimate.classList.add('estimate-close');
+         addYourPhone.classList.add('addYourPhone-close');
+         button_checkout.classList.add('addYourPhone-close');
+         p_basketModal_empty.classList.remove('p-basketModal-empty-close');
+         button_checkout.classList.add('button-checkout-close');
+      }
+}
+function changeQuantity(event){
+   let target=event.target;
+   let target_MenuItem=target.closest('.browseMenu-item');
+   let target_title=target_MenuItem.querySelector('.browseMenu-item_title');
+   for(let elem of basketProduct){
+      if(target_title.innerText===elem.titleofProduct){
+         elem.quantity=target.value;
+      }
+   }
+   calculateEstimate();
+   
 }
